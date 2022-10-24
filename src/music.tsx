@@ -2,7 +2,7 @@ import { Lrc } from "react-lrc";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import React from "react";
-import { animated, useTransition } from "react-spring";
+import { animated, useSpring } from '@react-spring/web'
 //import { Wave } from "@foobar404/wave";
 
 const LRC = `[00:00.000]作词 : Kaako
@@ -60,9 +60,16 @@ const LRC = `[00:00.000]作词 : Kaako
 [05:00.240]僕等はここにいたんだよ
 [05:26.410]映画が終わる`;
 
+
 const Player = () => {
     const [time, setTime] = React.useState(0);
 
+
+    const [styles, api] = useSpring(() => ({
+       opacity: 1 
+      
+      
+      }))
     
 
     return(
