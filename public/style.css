@@ -1,0 +1,39 @@
+@keyframes lrc-see
+	{
+	from {
+        filter:blur(0px);
+        font-weight: 300;
+        font-size:18px;
+    }
+	to {
+    filter:blur(2px);
+    font-weight: bolder;
+    font-size:20px;
+}
+}
+
+@keyframes lrc-dis{
+	from {
+        filter:blur(2px);
+        font-weight: bolder;
+        font-size:20px;
+}
+	to {
+        filter:blur(0px);
+        font-weight: 300;
+        font-size:18px;
+    }
+}
+
+.lrc::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+.lrc {
+  user-select: none;
+  /* firefox */
+  scrollbar-width: none;
+
+  /* ie */
+  -ms-overflow-style: none;
+}
