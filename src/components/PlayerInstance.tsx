@@ -12,7 +12,6 @@ export default function PlayerInstance({ setTime }: { setTime: Function }) {
         console.log("暂停");
       }}
       onPlay={e => {
-        setTime(0);
         console.log("开始播放");
       }}
       onListen={e => {
