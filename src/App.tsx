@@ -1,11 +1,7 @@
-import React from "react";
-import Player from "./music"
-
-
-
+import Player from "./components/Player";
 
 const App = () => (
-  <Player></Player>
+  <Player/>
 );
 
 export default App;
