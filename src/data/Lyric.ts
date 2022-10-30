@@ -1,11 +1,4 @@
-import { Lrc } from "react-lrc";
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
-import React from "react";
-import { animated, useSpring } from '@react-spring/web'
-//import { Wave } from "@foobar404/wave";
-
-const LRC = `[00:00.000]作词 : Kaako
+const Lyric = `[00:00.000]作词 : Kaako
 [00:01.000]作曲 : Kaako/Monkey
 [00:21.370]白紙のノートと向かい合っても
 [00:27.140]寝つけない夜でも 走っている
@@ -60,68 +53,4 @@ const LRC = `[00:00.000]作词 : Kaako
 [05:00.240]僕等はここにいたんだよ
 [05:26.410]映画が終わる`;
 
-
-const Player = () => {
-    const [time, setTime] = React.useState(0);
-
-
-    const [styles, api] = useSpring(() => ({
-       opacity: 1 
-      
-      
-      }))
-    
-
-    return(
-    <>
-    <Lrc
-        lrc={LRC}
-        className="lrc"
-        recoverAutoScrollInterval={0}
-        currentMillisecond={time}
-        style={{ height: "calc(100vh - 110px)", padding: "100px 20px" }}
-        lineRenderer={({ index, active, line }) => (
-          <div
-            style={{
-              fontFamily: 'Noto Sans SC',
-              fontSize: active ? "20px" : "18px",
-              color: active ? "#000" : "#808080",
-              fontWeight: active ? "bolder" : 300 ,
-              lineHeight: "40px",
-              animation: active ? "lrc-see 0.05s" : "lrc-dis 0.05s",
-              filter: active ? "blur(0px)" : "blur(2px)",
-              //animationIterationCount:"1",
-              transitionTimingFunction:"ease"
-            }}
-          >
-            {line.content}
-          </div>
-        )} 
-        />
-
-     
-     <AudioPlayer
-      src="./music/HoneyComeBear - 走馬灯.mp3"
-      listenInterval={1}
-      onPause={(e) => {
-        const audio = document.querySelector('audio');
-        setTime(audio!.currentTime*1000+500);
-        console.log("暂停");
-      }}
-      onPlay={(e) => {
-        setTime(0);
-        console.log("开始播放");
-      }}
-      onListen={(e) => {
-        const audio = document.querySelector('audio');
-        setTime((audio!.currentTime*1000+500));
-        //console.log(audio!.currentTime);
-        //</>const test = documgetElementById("rhap_current-time")
-        // .textContent;m^Kl0(T7Q(SX76%((XKT
-      }}
-      />
-      </>
-    )
-  };
-
-export default Player;
+export default Lyric;
