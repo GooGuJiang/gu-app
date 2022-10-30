@@ -29,7 +29,7 @@
     "eject": "react-scripts eject",
     "electron-start": "electron .",
     "dev": "concurrently \"npm run start\" \"npm run electron-start\"",
-	"package": "electron-packager . my-electron-app --platform=win32 --arch=x64 --overwrite --electron-version --download.mirrorOptions.mirror=https://npmmirror.com/mirrors/electron/"
+	"package": "npm run build|electron-packager . my-electron-app --platform=win32 --arch=x64 --overwrite --electron-version --download.mirrorOptions.mirror=https://npmmirror.com/mirrors/electron/"
   },
   "eslintConfig": {
     "extends": [
